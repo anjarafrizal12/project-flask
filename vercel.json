@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
         {
-            "src": "./genui.py",
+            "src": "./api/genui.py",
             "use": "@vercel/python"
         }
     ],
     "routes": [
         {
-            "src": "/(.*)",
-            "dest": "/"
+            "src": "/api/(.*)",
+            "dest": "/api"
         }
     ]
 }
