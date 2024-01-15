@@ -6,6 +6,6 @@ app = Flask(__name__)
 def home():
     return 'Hello, World!'
 
-@app.route('/about')
+@app.route('/about', methods=["POST"])
 def about():
     return 'About'
