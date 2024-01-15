@@ -26,7 +26,7 @@ def uploadui():
             
         else:
             return {"error":"invalid extension","allowed":"JPG, JPEG, PNG","upload_ext":extension.upper()}
-            
 
-        
-    
+@app.route('/', methods=["GET"])
+def homepage():
+    return "Hello World"
