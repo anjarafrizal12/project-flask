@@ -4,14 +4,21 @@ from flask import Flask, render_template, request, send_file
 from flask_sqlalchemy import SQLAlchemy
 import base64
 import os
+from flask import Flask
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
 @app.route('/')
+@cross_origin()
 def home():
     return 'Hello, World!'
 
 @app.route('/upload-ui', methods=["POST"])
+@cross_origin()
 def uploadui():
     if request.method == 'POST':
         file = request.files['file']
